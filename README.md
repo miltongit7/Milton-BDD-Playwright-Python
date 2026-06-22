@@ -39,3 +39,8 @@ The workflow installs dependencies, installs Playwright browsers, and runs `pyte
 
 - Keep `.venv/` out of source control. It is ignored by `.gitignore`.
 - If you need a fresh environment, recreate it with `python -m venv .venv`.
+
+## VS Code & PYTHONPATH
+
+- This project adds a `.env` file at the workspace root with `PYTHONPATH=${workspaceFolder}` to help Pylance locate local packages.
+- VS Code settings (`.vscode/settings.json`) point `python.envFile` to this file; ensure you select the project's virtual environment (Command Palette → `Python: Select Interpreter`) and reload the window if import diagnostics persist.
