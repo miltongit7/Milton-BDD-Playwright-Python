@@ -1,3 +1,5 @@
+from playwright.sync_api import Page, expect
+
 class HomePage:
     def __init__(self, page):
         self.page = page
@@ -6,8 +8,8 @@ class HomePage:
         self.dashboard_link = page.get_by_role("link", name="Dashboard")
 
     def is_upgrade_button_visible(self):
-        return self.upgrade_button.is_visible()
-    
+        expect(self.upgrade_button).to_be_visible()
+
     def click_performance_link(self):
         self.performance_link.click()
     

@@ -12,7 +12,7 @@ def test_example(page: Page) -> None:
 
     login_page.login("Admin", "admin123")
     
-    expect(home_page.upgrade_button).to_be_visible()
+    home_page.is_upgrade_button_visible()
     home_page.click_performance_link()
     expect(page).to_have_url(re.compile(r".*/performance.*"))
     home_page.click_dashboard_link()
